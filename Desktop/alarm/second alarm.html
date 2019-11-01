@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      #ip input{
+        border: none;
+        border-bottom: 1px grey solid;
+        background-color: inherit;
+        width: 40px;
+        outline: none;
+        margin-left: 40px;
+        margin-top: 40px;
+        color: #fff;
+        font-size: 20px;
+      }
+      #currentId{
+        font-size: 150%;
+        color: #fff;
+        margin-left: 50px;
+      }
+      .holder{
+        background: #022777;
+        width: 400px;
+        height: 400px;
+        margin-left:30%;
+        margin-top: 60%;
+        margin: auto;
+        margin-top: 15%;
+        box-shadow: #0000;
+        box-shadow: 8px 4px  10px rgba(0, 0, 0, .5);
+        border-radius: 10px;
+      }
+      
+    </style>
+</head>
+<body>
+        <div class="holder">
+          
+                <div class="hms" style=" padding: 20px">
+                    <div id="currentId">
+                        Current Time is
+                        <div id="currentTime"></div>
+                      </div>
+                      <input type="file" class="btn btn-primary mt-3 ml-4" id="chose">  
+                      <div id="ip" class="">
+                <input type="number" id="alarm1">
+                <input type="number" id="alarm2">
+                <input type="text" id="alarm3">
+                </div><br>
+                <button onclick="setAlarm()" id="ring" class="btn btn-success ml-5 mt-2" style=" box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)">Set Alarm</button><br><br>
+                <div id="options" style="display:none">
+                <button onclick="snooze()"class="btn btn-info ml-5 mt-2" style=" box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)" >SNOOZE 5 MINUTES</button>
+                <button onclick="stopAlarm()" class="btn btn-danger ml-3 mt-2" style=" box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)">STOP</button>
+               
+              
+              </div>
+              <button onclick="choose()">Choose me</button>
+              <!-- <div id="systemTime"></div> -->
+            
+            
+            </div>
+            </div>
+</body>
+  <script type="text/javascript">
+   var a,b,c,d,stime,set,eg,egg;
+   var m = focus();
+   setInterval (mTime,1000);
+   var sound = new Audio();
+  sound.src = 'music.mp3';
+
+  
+   function mTime(){
+   focus();
+    a = new Date();
+    b = a.getHours();
+    c = a.getMinutes();
+    d = a.getSeconds();
+    stime = b + ":" +c+ ":" +d;
+    document.getElementById('currentTime').innerHTML = stime;
+  }
+  function setAlarm(){
+    set=setTimeout(setAlarm, 1000);
+    if(alarm1.value == b && alarm2.value==c){
+      console.log('time')
+      sound.play();
+    }
+    if(alarm1.value == "" && alarm2.value==""){
+      alarm1.value=b;
+      alarm2.value=c;
+      console.log('time')
+      sound.play();
+    }
+    document.getElementById('options').style.display='';
+  }
+   function choose(){
+     var myAud = new Audio();
+     var bb = chose.value;
+    //  myAud.src = chose.value;
+    //  alert(myAud.src);
+    //  console.log(myAud);
+    //  eg = document.createElement('aud');
+    //  eg.setAttribute('src', egg);
+    //  alert(egg);
+   }
+
+  function stopAlarm(){
+            sound.pause();
+            sound.mTime = 0;
+            clearTimeout(set);
+            alarm1.value="";
+            alarm2.value="";
+            document.getElementById('options').style.display = 'none';
+        };
+        function snooze(){
+          alarm1.value="";
+            alarm2.value="";
+            stopAlarm();
+            setTimeout(setAlarm,60000);
+
+        }
+  </script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  
+</head>
+<body>
+    <div style="background: #4e0255;width: 400px;height: 400px; margin-left: 35%;">
+     
+    <div class="hms" style="margin: auto;margin-left:20%;margin-top: 60%; padding: 20px">
+    <p>Current time is:</p>
+    <div id="currentTime" style="margin-top:50px; display: block;"></div>
+    <input type="time" id="alarm">
+    <button onclick="alarmTime()" id="ring">Set Alarm</button><br><br>
+    
+    <div id="options" style="display:none">
+    <button onclick="snooze()" >SNOOZE 5 minutes</button>
+    <button onclick="stopAlarm()">STOP</button>
+   
+</div>
+  <!-- <div id="systemTime"></div> -->
+
+
+</div>
+</div>
+</body>
+
+ <script type="text/javascript" >
+     var a,b,c,d,time;
+   setInterval (systemTime,1000);
+   function systemTime(){
+    a = new Date();
+    b = a.getHours();
+    c = a.getMinutes();
+    d = a.getSeconds();
+    time = b + ":" +c+ ":" +d;
+    console.log(time)
+    document.getElementById('currentTime').innerHTML = time;
+    
+  }
+
+        // var h = hours.value;
+        // var m = minutes.value;
+        // var s = seconds.value;
+        // document.getElementById('alarm').value;
+        
+        
+        setInterval(system, 1000);
+        // var alarm = alarmTime.getTime() = (new Date()).getTime();
+    
+    
+    
+        function systemTime(){
+        var alarm = new Date();
+        var b = alarm.getUTCHours();
+        var c = alarm.getUTCMinutes();
+        var d = alarm.getUTCSeconds();
+        var f   = b+ ":" +c+ ":" +0;
+        
+        
+        // if(systemTime==stopwatch){
+        //        sound.play()
+        //    }
+
+        // var h = hour.value;
+        // var m = minutes.value;
+        // var s = seconds.value;
+        // alarmTime =  h+ ":" +m+ ":" +0;
+        
+        
+
+        
+            document.getElementById('options').style.display='';
+        
+        };
+
+        function stopAlarm(){
+            sound.pause();
+            sound.systemTime = 0;
+            document.getElementById('options').style.display = 'none';
+        };
+        function snooze(){
+            stopAlarm();
+            setTimeout(systemTime, 36000);
+
+        }
+     var sound = new Audio();
+     sound.src = 'busysinging-253178-1.mp3';
+     
+ </script>
+</html>
