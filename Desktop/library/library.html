@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="lib.css">
+</head>
+<body>
+ <!-- <div class="row">
+<div class="container" style="margin-top: 19%;" id="showdiv">
+       <center>
+              <button class="col-md-1 submit btn btn-success btn-md shadow-lg p-3 rounded" onclick="dispDiv()" id="but">OK</button>
+       </center>
+</div>
+</div> -->
+
+    <div class="row">
+             
+ <div class="container mt-5 col-md-4 ml-2">
+      <div class="card-header">
+                         <h1><b>BOOK STORE</b></h1>
+              </div>
+      <div class="card-body">
+             <label for="author"><h5>AUTHOR :</h5></label>
+              <input type="text" class="form-control text-center total" id="myauthor">
+      </div>
+
+      <div class="card-body">
+            <label for="author"><h5>PAGES :</h5></label>
+             <input type="text" class="form-control text-center total" id="mypage">
+     </div>
+
+     <div class="card-body">
+            <label for="author"><h5>TITLE :</h5></label>
+             <input type="text" class="form-control text-center total" id="booktitle">
+     </div>
+
+     <div class="form-control" id="divs" style="height: 250px; width: 130%; background-color: rgb(59, 10, 105); margin-top: -40%; margin-left: 80%;">
+       <center>
+              <h1 style="color: #fff; margin-top: 10%;" > PLEASE FILL IN THE FORMS</h1>
+              <button class=" total btn btn-success" style="margin-top: 10%;" onclick="hideMe()" id="add">OK</button>
+       </center>
+       </div>
+      <div class="card-body">
+         <button class="form-control text-center total btn btn-success" onclick="disp()" id="add">ADD</button>
+    </div>
+    <div class="card-body">
+       <button class="form-control text-center total btn btn-primary" onclick="dispe()" id="add">CHECK AVAILABLE BOOKS</button>
+  </div>
+</div>
+
+<div class="container mt-5 col-md-4 ml-2">
+            <table class="table table-bordered table-dark table-hover" id="every">
+                     <div class="card-header">
+                        <h1><b>AVAILABLE BOOKS</b></h1>
+                        </div>
+                    <thead>
+                      <tr>
+                          <th>S/N</th>
+                          <th>AUTHOR</th>
+                          <th>PAGES</th>
+                          <th>TITLE</th>
+                     </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                       </tbody>
+                </table>
+               </div> 
+</div>
+
+</body>
+ <script src="jquery/jquery.min.js"></script>
+ <script src="lib.js"></script>
+</html>
