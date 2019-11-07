@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+ <div class="row">
+    <div class="container mt-5 col-md-4 ml-2">
+        <div class="card-header">
+                         <h1><b>BOOK STORE</b></h1>
+              </div>
+      <div class="card-body">
+             <label for="author"><h5>AUTHOR :</h5></label>
+              <input type="text" class="form-control text-center total" id="myauthor">
+      </div>
+
+      <div class="card-body">
+            <label for="author"><h5>PAGES :</h5></label>
+             <input type="text" class="form-control text-center total" id="mypage">
+     </div>
+
+     <div class="card-body">
+            <label for="author"><h5>TITLE :</h5></label>
+             <input type="text" class="form-control text-center total" id="booktitle">
+     </div>
+
+     <div class="card-body">
+            <button class="form-control text-center total btn btn-success" onclick="disp()" id="add">ADD</button>
+     </div>
+
+     <div class="card-body">
+        <button class="form-control text-center total btn btn-success" onclick="clearAll()" id="add">clear</button>
+ </div>
+
+      </div>
+
+      <div class="container mt-5 col-md-4 ml-2">
+        <table class="table" id="every">
+                <thead>
+                  <tr>
+                      <th>S/N</th>
+                      <th>AUTHOR</th>
+                      <th>PAGES</th>
+                      <th>TITLE</th>
+                 </tr>
+                </thead>
+                <tbody id="tbody">
+                   </tbody>
+            </table>
+           </div> 
+
+        </div>
+</body>
+ <script>
+    count = 0;
+    // var ten = [];
+function disp(){
+    var ten = JSON.parse(localStorage.books);
+    var obj = {
+        title: booktitle.value,
+        pages:mypage.value,
+        author:myauthor.value
+    };
+    ten.push(obj);
+    localStorage.books = JSON.stringify(ten);
+    console.log(ten)
+    var ann = JSON.parse(localStorage.books);
+    console.log(ann)
+    for(var i = 0; i < ann.length; i ++){
+        count++;
+        var m = `<tr><td>`+count+`</td><td>`+ann[i].title+`</td><td>`+ann[i].pages+`</td><td>`+ann[i].author+`</td></tr>`;
+    every.innerHTML += m;
+}
+}
+function clearAll(){
+    localStorage.clear()
+}
+ </script>
+</html>
