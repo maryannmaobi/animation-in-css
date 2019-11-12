@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="libra3.css">
+</head>
+<body>
+              <nav class="navbar navbar-expand-sm navbar-dark  bg-light fixed-top">
+                     <div class="container-fluid">
+      <button class="btn btn-success" onclick="serch()">Search</button> <input type="text" class="col-md-12 rounded" style="border:none;" id="searchme" placeholder="Search book">
+                     </div>
+              </nav>
+              <div class="container mt-5">
+              <table class="table table-bordered table-light table-hover" id="everydisp" style="font-size: 20px;">
+                           <thead>
+                             <tr>
+                                 <th>S/N</th>
+                                 <th>AUTHOR</th>
+                                 <th>PAGES</th>
+                                 <th>TITLE</th>
+                            </tr>
+                           </thead>
+                           <tbody id="tdisplay">
+       
+                              </tbody>
+                       </table>
+                      </div>   
+                     </div>        
+     <div class="row">
+<div class="container mt-5 col-md-4 ml-2">
+      <div class="card-header">
+                         <h1><b  style="color: #fff;">BOOK STORE</b></h1>
+              </div>
+      <div class="card-body">
+             <label for="author"  style="color: #fff;"><h5>AUTHOR :</h5></label>
+              <input type="text" class="form-control p-4 test" id="myauthor">
+      </div>
+
+      <div class="card-body">
+            <label for="auth or"><h5  style="color: #fff;">PAGES :</h5></label>
+             <input type="text" class="form-control p-4 test" id="mypage">
+     </div>
+
+     <div class="card-body">
+            <label for="author"><h5 style="color: #fff;">TITLE :</h5></label>
+             <input type="text" class="form-control p-4 test" id="booktitle">
+     </div>
+
+     <div class="form-control" id="divs" style="height: 250px; width: 130%; background-color: rgb(59, 10, 105); margin-top: -40%; margin-left: 80%;">
+       <center>
+              <h1 style="color: #fff; margin-top: 10%;" > PLEASE FILL IN THE FORMS</h1>
+              <button class=" total btn btn-success" style="margin-top: 10%;" onclick="hideMe()" id="add">OK</button>
+       </center>
+       </div>
+      <div class="card-body">
+         <button class="form-control p-4 total btn btn-success p-3" onclick="disp()" id="add">ADD</button>
+    </div>
+    <div class="card-body">
+       <button class="form-control p-4 total btn btn-primary" onclick="dispe()" id="add" style="font-size: 15px;">CHECK AVAILABLE BOOKS</button>
+  </div>
+</div>
+
+<div class="mt-5 col-md-6" style="display: none;color: #fff;" id="showtab">
+            <table class="table table-bordered table-hover" id="every" style="font-size: 20px;">
+                     <div class="card-header">
+                        <h1><b style="color: #fff;">AVAILABLE BOOKS</b></h1>
+                        </div>
+                    <thead>
+                      <tr style="color: #fff;">
+                          <th>S/N</th>
+                          <th>AUTHOR</th>
+                          <th>PAGES</th>
+                          <th>TITLE</th>
+                     </tr>
+                    </thead>
+                    <tbody id="tbody" style="color: #fff;">
+
+                       </tbody>
+                </table>
+               </div> 
+</div>
+
+</body>
+ <script src="jquery/jquery.min.js"></script>
+ <script src="libra2.js"></script>
+</html>
