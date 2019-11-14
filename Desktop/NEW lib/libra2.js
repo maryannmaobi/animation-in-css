@@ -5,22 +5,23 @@ function disp(){
     // console.log(stobooks)
      var storebook = "mybooks" + stobooks.length;
         // console.log(storebook)
-       
-    var obj = {
-        title: booktitle.value,
-        pages:mypage.value,
-        author:myauthor.value
-    };
-    alert('SUCCESSFULLY ADDED');
-    booktitle.value = "";
-    mypage.value = "";
-    myauthor.value = "";
-
-    var ob = JSON.stringify(obj);
-    localStorage.setItem(storebook,ob);
     if (booktitle.value == "" || mypage.value == "" || myauthor.value == ""){
         $('#divs').toggle(1000)
         document.getElementById('divs').style.display = "block";
+    }
+  else{
+        var obj = {
+            title: booktitle.value,
+            pages:mypage.value,
+            author:myauthor.value
+        };
+        booktitle.value = "";
+        mypage.value = "";
+        myauthor.value = "";
+    
+        var ob = JSON.stringify(obj);
+        localStorage.setItem(storebook,ob);
+        alert('SUCCESSFULLY ADDED');
     }
  
      
